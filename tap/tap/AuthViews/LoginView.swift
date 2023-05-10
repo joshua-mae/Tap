@@ -25,24 +25,23 @@ struct LoginView: View {
                         .font(.largeTitle)
                         .bold()
                     Spacer()
-                }
+                } //WELCOME BACK
                 .padding()
                 .padding(.top)
-                
                 Spacer()
+                
                 HStack{
                     Image(systemName: "mail")
                     TextField("Email", text: $email)
                     
-                    Spacer()
+//                    Spacer()
                     
-                    if (email.count != 0) {
-                        Image(systemName: "checkmark")
-                            .fontWeight(.bold)
-                            .foregroundColor(.green)
-                    }
-
-                }
+//                    if (email.count != 0) {
+//                        Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
+//                            .fontWeight(.bold)
+//                            .foregroundColor(email.isValidEmail() ? .green : .red)
+//                    }
+                } //Email
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -50,37 +49,49 @@ struct LoginView: View {
                         .foregroundColor(.black)
                 )
                 .padding()
-                
                 
                 HStack{
                     Image(systemName: "lock")
                     SecureField("Password", text: $password)
+//                    Spacer()
                     
-                    Spacer()
-                    
-                    if (password.count != 0) {
-                        Image(systemName: "checkmark")
-                            .fontWeight(.bold)
-                            .foregroundColor(.green)
-                    }
-                }
+//                    if (password.count != 0) {
+//                        Image(systemName: isValidPassword(_password: password) ? "checkmark" : "xmark")
+//                            .fontWeight(.bold)
+//                            .foregroundColor(isValidPassword(_password: password) ? .green : .red)
+//                    }
+                } //Password
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2)
                         .foregroundColor(.black)
                 )
-                
-                .padding()
-                
-                Button(action: {
-                    withAnimation{self.currentShowingView = "signup"
+                .padding([.leading,.trailing, .top], nil)
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        withAnimation{self.currentShowingView = "NA"
+                        }
+                    })
+                    {
+                        Text("Forgot password")
+                            .foregroundColor(Color(.systemGray).opacity(0.7))
+//                            .font(.caption2)
                     }
-                })
-                {
-                    Text("Don't have an account?")
-                        .foregroundColor(.black.opacity(0.7))
+                    Spacer()
+                    Spacer()
+                    Button(action: {
+                        withAnimation{self.currentShowingView = "signup"
+                        }
+                    })
+                    {
+                        Text("Don't have an account?")
+                            .foregroundColor(Color(.systemGray))
+                    }
+                    Spacer()
                 }
+                
                 Spacer()
                 Spacer()
                 

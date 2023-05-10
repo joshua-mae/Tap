@@ -14,6 +14,25 @@ struct SignUpView: View {
 
     @State private var email: String = ""
     @State private var password: String = ""
+    
+    private func isValidPassword(_password: String) -> Bool {
+        //minimum 6 chars long
+        // 1 uppercase, 1 lowercase
+        // 1 number
+        // 1 special char
+        let passwordRegex = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])(?=.*[A-Z])(?=.*[0-9]).{6,}$")
+        return passwordRegex.evaluate(with: password)
+    }
+    
+    private func oneUpperOneLower(_password: String) -> Bool {
+        let passwordRegex = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[A-Z]).{2,}$")
+        return passwordRegex.evaluate(with: password)
+    }
+    
+    private func atleastOneNum(_password: String) -> Bool {
+        let passwordRegex = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[0-9]).{1,}$")
+        return passwordRegex.evaluate(with: password)
+    }
 
     var body: some View {
         ZStack{
@@ -25,7 +44,7 @@ struct SignUpView: View {
                         .font(.largeTitle)
                         .bold()
                     Spacer()
-                }
+                } //Create an account!
                 .padding()
                 .padding(.top)
                 
@@ -37,12 +56,12 @@ struct SignUpView: View {
                     Spacer()
                     
                     if (email.count != 0) {
-                        Image(systemName: "checkmark")
+                        Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
                             .fontWeight(.bold)
-                            .foregroundColor(.green)
+                            .foregroundColor(email.isValidEmail() ? .green : .red)
                     }
 
-                }
+                } //Email
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -50,8 +69,32 @@ struct SignUpView: View {
                         .foregroundColor(.black)
                 )
                 .padding()
-                
-                
+                VStack(alignment: .leading) {
+                    HStack {
+                        Image(systemName: oneUpperOneLower(_password: password) ? "checkmark" : "xmark")
+                            .foregroundColor(oneUpperOneLower(_password: password) ? .green : .red)
+                        Text("Atleast one uppercase letter and lowercase letter")
+                    }
+                    HStack {
+                        Image(systemName: atleastOneNum(_password: password) ? "checkmark" : "xmark")
+                            .foregroundColor(atleastOneNum(_password: password) ? .green : .red)
+                        Text("Atleast one number 0-9")
+                    }
+                    HStack {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.red)
+                        Text("Atleast one special character i.e $@$#!%*?&")
+                    }
+                    HStack {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.red)
+                        Text("Atleast six characters long")
+                    }
+                }
+                .font(.caption)
+                .italic()
+                .padding([.leading], nil)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 HStack{
                     Image(systemName: "lock")
                     SecureField("Password", text: $password)
@@ -59,19 +102,19 @@ struct SignUpView: View {
                     Spacer()
                     
                     if (password.count != 0) {
-                        Image(systemName: "checkmark")
+                        Image(systemName: isValidPassword(_password: password) ? "checkmark" : "xmark")
                             .fontWeight(.bold)
-                            .foregroundColor(.green)
+                            .foregroundColor(isValidPassword(_password: password) ? .green : .red)
                     }
-                }
+                } //Password
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2)
                         .foregroundColor(.black)
                 )
-                
-                .padding()
+                .padding([.leading, .bottom, .trailing], nil) //ONLY HERE IF INVALID PASSWORD FIRST TIME
+//                .padding()
                 
                 Button(action: {
                     withAnimation{
@@ -121,3 +164,11 @@ struct SignUpView: View {
     }
 }
 
+//ONLY HERE TO BE ABLE TO SEE WHEN CUSTOMIZE
+struct SignupView_Preview: PreviewProvider {
+    static var previews: some View {
+        @State var currentViewShowing: String = "signup"
+        SignUpView(currentShowingView: $currentViewShowing)
+        
+    }
+}

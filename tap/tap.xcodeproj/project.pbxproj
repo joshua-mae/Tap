@@ -15,8 +15,6 @@
 		457D73EA2A09EEA800B13F55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D73E92A09EEA800B13F55 /* ContentView.swift */; };
 		457D73EC2A09EEA900B13F55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 457D73EB2A09EEA900B13F55 /* Assets.xcassets */; };
 		457D73EF2A09EEA900B13F55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 457D73EE2A09EEA900B13F55 /* Preview Assets.xcassets */; };
-		A97F35332A0AD85800A16CFF /* TabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F35322A0AD85800A16CFF /* TabRouter.swift */; };
-		A97F35352A0BEAD100A16CFF /* TestCreateTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F35342A0BEAD100A16CFF /* TestCreateTabBar.swift */; };
 		458512ED2A0B1DB00012794C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458512EC2A0B1DB00012794C /* LoginView.swift */; };
 		458512EF2A0B218E0012794C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458512EE2A0B218E0012794C /* SignUpView.swift */; };
 		458512F12A0B22190012794C /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458512F02A0B22190012794C /* AuthView.swift */; };
@@ -24,6 +22,10 @@
 		45CCD9BC2A0AD534009249D3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 45CCD9BB2A0AD534009249D3 /* FirebaseAnalytics */; };
 		45CCD9BE2A0AD535009249D3 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45CCD9BD2A0AD534009249D3 /* FirebaseAnalyticsSwift */; };
 		45CCD9C12A0AD811009249D3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 45CCD9C02A0AD811009249D3 /* FirebaseAuth */; };
+		A97F35332A0AD85800A16CFF /* TabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F35322A0AD85800A16CFF /* TabRouter.swift */; };
+		A97F35352A0BEAD100A16CFF /* TestCreateTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F35342A0BEAD100A16CFF /* TestCreateTabBar.swift */; };
+		A97F35392A0C23C000A16CFF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F35382A0C23C000A16CFF /* String.swift */; };
+		A97F353B2A0C3EC400A16CFF /* ForgotPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F353A2A0C3EC400A16CFF /* ForgotPassView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,13 +38,15 @@
 		457D73E92A09EEA800B13F55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		457D73EB2A09EEA900B13F55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		457D73EE2A09EEA900B13F55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A97F35312A0A932C00A16CFF /* tap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tap.entitlements; sourceTree = "<group>"; };
-		A97F35322A0AD85800A16CFF /* TabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRouter.swift; sourceTree = "<group>"; };
-		A97F35342A0BEAD100A16CFF /* TestCreateTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCreateTabBar.swift; sourceTree = "<group>"; };
 		458512EC2A0B1DB00012794C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		458512EE2A0B218E0012794C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		458512F02A0B22190012794C /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		45CCD9B82A0AD3CF009249D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A97F35312A0A932C00A16CFF /* tap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tap.entitlements; sourceTree = "<group>"; };
+		A97F35322A0AD85800A16CFF /* TabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRouter.swift; sourceTree = "<group>"; };
+		A97F35342A0BEAD100A16CFF /* TestCreateTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCreateTabBar.swift; sourceTree = "<group>"; };
+		A97F35382A0C23C000A16CFF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		A97F353A2A0C3EC400A16CFF /* ForgotPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 		457D73E62A09EEA800B13F55 /* tap */ = {
 			isa = PBXGroup;
 			children = (
+				A97F35362A0C238900A16CFF /* Extensions */,
 				A97F35312A0A932C00A16CFF /* tap.entitlements */,
 				457D73E72A09EEA800B13F55 /* tapApp.swift */,
 				457D73E92A09EEA800B13F55 /* ContentView.swift */,
@@ -125,8 +130,17 @@
 				458512EC2A0B1DB00012794C /* LoginView.swift */,
 				458512EE2A0B218E0012794C /* SignUpView.swift */,
 				458512F02A0B22190012794C /* AuthView.swift */,
+				A97F353A2A0C3EC400A16CFF /* ForgotPassView.swift */,
 			);
 			path = AuthViews;
+			sourceTree = "<group>";
+		};
+		A97F35362A0C238900A16CFF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A97F35382A0C23C000A16CFF /* String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,8 +228,10 @@
 				4532D4D22A0B2AAC00FC894A /* InventoryView.swift in Sources */,
 				4532D4CB2A0B2A2E00FC894A /* HomeView.swift in Sources */,
 				457D73EA2A09EEA800B13F55 /* ContentView.swift in Sources */,
+				A97F35392A0C23C000A16CFF /* String.swift in Sources */,
 				A97F35352A0BEAD100A16CFF /* TestCreateTabBar.swift in Sources */,
 				4532D4D02A0B2A9C00FC894A /* ScheduleView.swift in Sources */,
+				A97F353B2A0C3EC400A16CFF /* ForgotPassView.swift in Sources */,
 				4532D4CE2A0B2A8400FC894A /* ProfileView.swift in Sources */,
 				457D73E82A09EEA800B13F55 /* tapApp.swift in Sources */,
 				A97F35332A0AD85800A16CFF /* TabRouter.swift in Sources */,
