@@ -71,7 +71,7 @@ struct LoginView: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        withAnimation{self.currentShowingView = "NA"
+                        withAnimation{self.currentShowingView = "newpass"
                         }
                     })
                     {
