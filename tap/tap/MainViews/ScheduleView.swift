@@ -7,9 +7,12 @@
 
 import SwiftUI
 
+
+// Weekly work hours view with buttons to send in avail
+
 struct ScheduleView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hello, World!")
     }
 }
 

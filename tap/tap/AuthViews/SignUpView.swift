@@ -33,6 +33,13 @@ struct SignUpView: View {
         let passwordRegex = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[0-9]).{1,}$")
         return passwordRegex.evaluate(with: password)
     }
+    private func atleastOneSpecial(_password: String) -> Bool {
+        return password.range(of: "[ !\"#$%&'()*+,-./:;<=>?@\\[\\\\\\]^_`{|}~]+", options: .regularExpression) != nil ? true : false
+    }
+
+    private func passwordlen(_password: String) -> Bool {
+        return password.count >= 6 ? true : false
+    }
 
     var body: some View {
         ZStack{
@@ -81,13 +88,13 @@ struct SignUpView: View {
                         Text("Atleast one number 0-9")
                     }
                     HStack {
-                        Image(systemName: "xmark")
-                            .foregroundColor(.red)
+                        Image(systemName: atleastOneSpecial(_password: password) ? "checkmark" : "xmark")
+                            .foregroundColor(atleastOneSpecial(_password: password) ? .green : .red)
                         Text("Atleast one special character i.e $@$#!%*?&")
                     }
                     HStack {
-                        Image(systemName: "xmark")
-                            .foregroundColor(.red)
+                        Image(systemName: passwordlen(_password: password) ? "checkmark" : "xmark")
+                            .foregroundColor(passwordlen(_password: password) ? .green : .red)
                         Text("Atleast six characters long")
                     }
                 }

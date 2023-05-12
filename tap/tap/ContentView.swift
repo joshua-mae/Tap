@@ -34,22 +34,24 @@ struct ContentView: View {
                         Label("Profile", systemImage: "person.crop.circle")
                               }
             }
-        }
-        Button (
-            action: {
-                let firebaseAuth = Auth.auth()
-                do {
-                    try firebaseAuth.signOut()
-                    withAnimation{
-                        userID = ""
+            Button (
+                action: {
+                    let firebaseAuth = Auth.auth()
+                    do {
+                        try firebaseAuth.signOut()
+                        withAnimation{
+                            userID = ""
+                        }
+                    } catch let signOutError as NSError{
+                        print("Error signing out: %@", signOutError)
                     }
-                } catch let signOutError as NSError{
-                    print("Error signing out: %@", signOutError)
+                }) {
+                    Text("Sign Out")
+                    
                 }
-            }) {
-                Text("Sign Out")
-                
-            }
+
+        }
+
         }
     }
 

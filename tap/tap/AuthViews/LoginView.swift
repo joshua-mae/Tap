@@ -71,12 +71,13 @@ struct LoginView: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        withAnimation{self.currentShowingView = "NA"
+                        withAnimation{self.currentShowingView = "newpass"
                         }
                     })
                     {
-                        Text("Forgot password")
-                            .foregroundColor(Color(.systemGray).opacity(0.7))
+                        Text("Forgot password?")
+                            .foregroundColor(Color(.systemGray))
+                                // .opacity(0.7))
 //                            .font(.caption2)
                     }
                     Spacer()
