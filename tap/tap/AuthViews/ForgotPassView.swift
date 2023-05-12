@@ -15,12 +15,10 @@ struct ForgotPassView: View {
     @State private var showAlert = false
     @State private var errString: String?
 
-    
     var body: some View {
         HStack{
-            Image(systemName: "hammer")
+            Image(systemName: "mail")
             TextField("Enter email address", text: $email)
-
         }
         .padding()
         .overlay(
@@ -28,52 +26,54 @@ struct ForgotPassView: View {
                 .stroke(lineWidth: 2)
                 .foregroundColor(.black)
         )
-
-        Button(action: {
-            Auth.auth().sendPasswordReset(withEmail: email) { error in
-                
-                if let error = error {
-                    self.errString = error.localizedDescription
-                    print (error)
-
+        .padding()
+        
+        VStack {
+            Spacer()
+                .frame(height:50)
+            Button(action: {
+                Auth.auth().sendPasswordReset(withEmail: email) { error in
+                    
+                    if let error = error {
+                        self.errString = error.localizedDescription
+                        print (error)
+                    }
+                    self.showAlert = true
                 }
-
-                self.showAlert = true
+            }) {
+                Text("Reset Password")
             }
-
-        }) {
-            Text("Reset Password")
-        }
-        .foregroundColor(.white)
-        .font(.title3)
-        .bold()
-        .frame(maxWidth: .infinity)
-        .padding()
-        .background(
-        RoundedRectangle(cornerRadius: 10)
-            .fill(Color.black))
-        .padding(.horizontal)
-        Button(action: {
-            self.currentShowingView = "login"
+            .foregroundColor(.white)
+            .font(.title3)
+            .bold()
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.black))
+            .padding(.horizontal)
             
-        }) {
-            Text("Return to login page")
-        }
-        .foregroundColor(.white)
-        .font(.title3)
-        .bold()
-        .frame(maxWidth: .infinity)
-        .padding()
-        .background(
-        RoundedRectangle(cornerRadius: 10)
-            .fill(Color.black))
-        .padding(.horizontal)
-        Spacer()
-
+            Button(action: {
+                withAnimation{
+                    self.currentShowingView = "login"
+                }
+            }) {
+                Text("Return to login page")
+            }
+            .foregroundColor(.white)
+            .font(.title3)
+            .bold()
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.black))
+            .padding(.horizontal)
+            
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Password Reset"), message: Text(self.errString ?? "Success.  Reset email sent check email"), dismissButton: .default(Text("Ok")))
-    }
-
+            }
         }
-    
+    }
 }
+
