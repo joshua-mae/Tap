@@ -7,13 +7,16 @@
 
 import SwiftUI
 import FirebaseAuth
+import FirebaseFirestore
 
 struct SignUpView: View {
+    let valid_words = ["Manager","Employee"]
     @Binding var currentShowingView: String
     @AppStorage("uid") var userID: String = ""
 
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var role: String = ""
     
     private func isValidPassword(_password: String) -> Bool {
         //minimum 6 chars long
@@ -39,6 +42,9 @@ struct SignUpView: View {
 
     private func passwordlen(_password: String) -> Bool {
         return password.count >= 6 ? true : false
+    }
+    private func isValidRole(_role: String) -> Bool {
+        return valid_words.contains(role) ? true : false
     }
 
     var body: some View {
@@ -122,6 +128,27 @@ struct SignUpView: View {
                 )
                 .padding([.leading, .bottom, .trailing], nil) //ONLY HERE IF INVALID PASSWORD FIRST TIME
 //                .padding()
+                HStack{
+                    Image(systemName: "person")
+                    TextField("Manager or Employee", text: $role)
+
+                    
+                    Spacer()
+                    
+                    if (role.count != 0) {
+                        Image(systemName: isValidRole(_role: role) ? "checkmark" : "xmark")
+                            .fontWeight(.bold)
+                            .foregroundColor(isValidRole(_role: role) ? .green : .red)
+                    }
+
+                } //role
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(lineWidth: 2)
+                        .foregroundColor(.black)
+                )
+                .padding()
                 
                 Button(action: {
                     withAnimation{
@@ -147,6 +174,13 @@ struct SignUpView: View {
                             print(authResult.user.uid)
                             withAnimation{
                                 userID = authResult.user.uid
+                            }
+                            let db = Firestore.firestore()
+                            db.collection("users").addDocument(data: ["email": email, "uid": authResult.user.uid, "role": role]) { (error) in
+                                
+                                if error != nil {
+                                    print("error")
+                                }
                             }
                             
                         }
