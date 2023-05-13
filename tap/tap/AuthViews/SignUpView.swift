@@ -186,32 +186,39 @@ struct SignUpView: View {
                     Group{
                         Spacer()
                         Spacer()
-                        
                         Button{
-                            Auth.auth().createUser(withEmail: email, password: password) {authResult, error in
-                                
-                                if let error = error {
-                                    print(error)
-                                    return
-                                }
-                                
-                                if let authResult = authResult {
-                                    print(authResult.user.uid)
-                                    withAnimation{
-                                        userID = authResult.user.uid
-                                    }
-                                    let db = Firestore.firestore()
-                                    db.collection("users").addDocument(data: ["email": email, "uid": authResult.user.uid, "role": role]) { (error) in
-                                        
-                                        if error != nil {
-                                            print("error")
-                                        }
+                            if atleastOneNum(_password: password) == true &&
+                                oneUpperOneLower(_password: password) == true &&
+                                atleastOneSpecial(_password: password) == true &&
+                                passwordlen(_password: password) == true &&
+                                isValidRole(_role: role) == true{
+                                Auth.auth().createUser(withEmail: email, password: password) {authResult, error in
+                                    
+                                    if let error = error {
+                                        print(error)
+                                        return
                                     }
                                     
+                                    if let authResult = authResult {
+                                        print(authResult.user.uid)
+                                        withAnimation{
+                                            userID = authResult.user.uid
+                                        }
+                                        let db = Firestore.firestore()
+                                        // Able to store user passwords in plain text on firestore
+                                        db.collection("users").addDocument(data: ["email": email,"uid": authResult.user.uid, "role": role]) { (error) in
+                                            
+                                            if error != nil {
+                                                print("error")
+                                            }
+                                        }
+                                        
+                                    }
                                 }
+                                
                             }
                             
-                        } label: {
+                        }label: {
                             Text("Create New Account")
                                 .foregroundColor(.white)
                                 .font(.title3)

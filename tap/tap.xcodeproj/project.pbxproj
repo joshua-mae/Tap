@@ -45,7 +45,7 @@
 		458512EC2A0B1DB00012794C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		458512EE2A0B218E0012794C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		458512F02A0B22190012794C /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
-		458F69D72A0EB57000041A76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		458F69D72A0EB57000041A76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45CCD9B82A0AD3CF009249D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A97F35312A0A932C00A16CFF /* tap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tap.entitlements; sourceTree = "<group>"; };
 		A97F35322A0AD85800A16CFF /* TabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRouter.swift; sourceTree = "<group>"; };
@@ -72,15 +72,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4532D4CC2A0B2A5300FC894A /* MainViews */ = {
+		4519628E2A0F1FC000EB14BA /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				457D73EB2A09EEA900B13F55 /* Assets.xcassets */,
+				A97F35322A0AD85800A16CFF /* TabRouter.swift */,
+				A97F35342A0BEAD100A16CFF /* TestCreateTabBar.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		4519628F2A0F202E00EB14BA /* Inventory */ = {
+			isa = PBXGroup;
+			children = (
+				4532D4D12A0B2AAC00FC894A /* InventoryView.swift */,
+			);
+			path = Inventory;
+			sourceTree = "<group>";
+		};
+		451962902A0F203100EB14BA /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				4532D4CF2A0B2A9C00FC894A /* ScheduleView.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		451962912A0F203400EB14BA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4532D4CD2A0B2A8400FC894A /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4532D4CC2A0B2A5300FC894A /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				4532D4CA2A0B2A2E00FC894A /* HomeView.swift */,
-				4532D4D12A0B2AAC00FC894A /* InventoryView.swift */,
-				4532D4CF2A0B2A9C00FC894A /* ScheduleView.swift */,
-				4532D4CD2A0B2A8400FC894A /* ProfileView.swift */,
 			);
-			path = MainViews;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		457D73DB2A09EEA800B13F55 = {
@@ -103,18 +134,19 @@
 		457D73E62A09EEA800B13F55 /* tap */ = {
 			isa = PBXGroup;
 			children = (
-				458F69D72A0EB57000041A76 /* Info.plist */,
-				A97F35362A0C238900A16CFF /* Extensions */,
 				A97F35312A0A932C00A16CFF /* tap.entitlements */,
+				45CCD9B82A0AD3CF009249D3 /* GoogleService-Info.plist */,
+				458F69D72A0EB57000041A76 /* Info.plist */,
+				4519628E2A0F1FC000EB14BA /* Misc */,
+				A97F35362A0C238900A16CFF /* Extensions */,
 				457D73E72A09EEA800B13F55 /* tapApp.swift */,
 				457D73E92A09EEA800B13F55 /* ContentView.swift */,
-				4532D4CC2A0B2A5300FC894A /* MainViews */,
+				4532D4CC2A0B2A5300FC894A /* Home */,
+				451962902A0F203100EB14BA /* Schedule */,
+				4519628F2A0F202E00EB14BA /* Inventory */,
+				451962912A0F203400EB14BA /* Profile */,
 				45CCD9C22A0AD86C009249D3 /* AuthViews */,
-				457D73EB2A09EEA900B13F55 /* Assets.xcassets */,
-				45CCD9B82A0AD3CF009249D3 /* GoogleService-Info.plist */,
 				457D73ED2A09EEA900B13F55 /* Preview Content */,
-				A97F35322A0AD85800A16CFF /* TabRouter.swift */,
-				A97F35342A0BEAD100A16CFF /* TestCreateTabBar.swift */,
 			);
 			path = tap;
 			sourceTree = "<group>";
