@@ -28,7 +28,6 @@
 		45CCD9C12A0AD811009249D3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 45CCD9C02A0AD811009249D3 /* FirebaseAuth */; };
 		A97F35332A0AD85800A16CFF /* TabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F35322A0AD85800A16CFF /* TabRouter.swift */; };
 		A97F35352A0BEAD100A16CFF /* TestCreateTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F35342A0BEAD100A16CFF /* TestCreateTabBar.swift */; };
-		A97F35392A0C23C000A16CFF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F35382A0C23C000A16CFF /* String.swift */; };
 		A97F353B2A0C3EC400A16CFF /* ForgotPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F353A2A0C3EC400A16CFF /* ForgotPassView.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		A97F35312A0A932C00A16CFF /* tap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tap.entitlements; sourceTree = "<group>"; };
 		A97F35322A0AD85800A16CFF /* TabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRouter.swift; sourceTree = "<group>"; };
 		A97F35342A0BEAD100A16CFF /* TestCreateTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCreateTabBar.swift; sourceTree = "<group>"; };
-		A97F35382A0C23C000A16CFF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A97F353A2A0C3EC400A16CFF /* ForgotPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,7 +178,6 @@
 		A97F35362A0C238900A16CFF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A97F35382A0C23C000A16CFF /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,7 +271,6 @@
 				4532D4D22A0B2AAC00FC894A /* InventoryView.swift in Sources */,
 				4532D4CB2A0B2A2E00FC894A /* HomeView.swift in Sources */,
 				457D73EA2A09EEA800B13F55 /* ContentView.swift in Sources */,
-				A97F35392A0C23C000A16CFF /* String.swift in Sources */,
 				A97F35352A0BEAD100A16CFF /* TestCreateTabBar.swift in Sources */,
 				4532D4D02A0B2A9C00FC894A /* ScheduleView.swift in Sources */,
 				A97F353B2A0C3EC400A16CFF /* ForgotPassView.swift in Sources */,

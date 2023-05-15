@@ -9,6 +9,14 @@ import SwiftUI
 import FirebaseAuth
 import FirebaseFirestore
 
+extension String {
+    func isValidEmail() -> Bool {
+        let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
+        
+        return regex.firstMatch(in: self, range: NSRange(location: 0, length: count)) != nil
+    }
+}
+
 struct SignUpView: View {
     let valid_words = ["Manager","Employee"]
     @Binding var currentShowingView: String
@@ -187,7 +195,8 @@ struct SignUpView: View {
                         Spacer()
                         Spacer()
                         Button{
-                            if atleastOneNum(_password: password) == true &&
+                            if  email.isValidEmail() == true &&
+                                atleastOneNum(_password: password) == true &&
                                 oneUpperOneLower(_password: password) == true &&
                                 atleastOneSpecial(_password: password) == true &&
                                 passwordlen(_password: password) == true &&
