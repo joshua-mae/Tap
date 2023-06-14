@@ -26,6 +26,12 @@
 		45CCD9BC2A0AD534009249D3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 45CCD9BB2A0AD534009249D3 /* FirebaseAnalytics */; };
 		45CCD9BE2A0AD535009249D3 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45CCD9BD2A0AD534009249D3 /* FirebaseAnalyticsSwift */; };
 		45CCD9C12A0AD811009249D3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 45CCD9C02A0AD811009249D3 /* FirebaseAuth */; };
+		A951466A2A36BC870090A539 /* HorizonCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A95146692A36BC870090A539 /* HorizonCalendar */; };
+		A951466D2A38CDCF0090A539 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951466C2A38CDCF0090A539 /* SideMenuView.swift */; };
+		A951466F2A38CDE40090A539 /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951466E2A38CDE40090A539 /* SideMenuOptionView.swift */; };
+		A95146712A38CE140090A539 /* SideMenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95146702A38CE140090A539 /* SideMenuHeader.swift */; };
+		A95146732A38CE300090A539 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95146722A38CE300090A539 /* SideMenuViewModel.swift */; };
+		A95146752A38D0DC0090A539 /* HexToColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95146742A38D0DC0090A539 /* HexToColor.swift */; };
 		A97F35332A0AD85800A16CFF /* TabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F35322A0AD85800A16CFF /* TabRouter.swift */; };
 		A97F35352A0BEAD100A16CFF /* TestCreateTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F35342A0BEAD100A16CFF /* TestCreateTabBar.swift */; };
 		A97F353B2A0C3EC400A16CFF /* ForgotPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97F353A2A0C3EC400A16CFF /* ForgotPassView.swift */; };
@@ -46,6 +52,11 @@
 		458512F02A0B22190012794C /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		458F69D72A0EB57000041A76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45CCD9B82A0AD3CF009249D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A951466C2A38CDCF0090A539 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		A951466E2A38CDE40090A539 /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
+		A95146702A38CE140090A539 /* SideMenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeader.swift; sourceTree = "<group>"; };
+		A95146722A38CE300090A539 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
+		A95146742A38D0DC0090A539 /* HexToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexToColor.swift; sourceTree = "<group>"; };
 		A97F35312A0A932C00A16CFF /* tap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tap.entitlements; sourceTree = "<group>"; };
 		A97F35322A0AD85800A16CFF /* TabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRouter.swift; sourceTree = "<group>"; };
 		A97F35342A0BEAD100A16CFF /* TestCreateTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCreateTabBar.swift; sourceTree = "<group>"; };
@@ -59,6 +70,7 @@
 			files = (
 				458F69DB2A0EB5A500041A76 /* FirebaseDatabaseSwift in Frameworks */,
 				45CCD9BE2A0AD535009249D3 /* FirebaseAnalyticsSwift in Frameworks */,
+				A951466A2A36BC870090A539 /* HorizonCalendar in Frameworks */,
 				45CCD9C12A0AD811009249D3 /* FirebaseAuth in Frameworks */,
 				458F69DF2A0EB5A500041A76 /* FirebaseFirestoreSwift in Frameworks */,
 				458F69D92A0EB5A500041A76 /* FirebaseDatabase in Frameworks */,
@@ -139,6 +151,7 @@
 				A97F35362A0C238900A16CFF /* Extensions */,
 				457D73E72A09EEA800B13F55 /* tapApp.swift */,
 				457D73E92A09EEA800B13F55 /* ContentView.swift */,
+				A951466B2A38CDB00090A539 /* SideMenu */,
 				4532D4CC2A0B2A5300FC894A /* Home */,
 				451962902A0F203100EB14BA /* Schedule */,
 				4519628F2A0F202E00EB14BA /* Inventory */,
@@ -175,9 +188,21 @@
 			path = AuthViews;
 			sourceTree = "<group>";
 		};
+		A951466B2A38CDB00090A539 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A951466C2A38CDCF0090A539 /* SideMenuView.swift */,
+				A951466E2A38CDE40090A539 /* SideMenuOptionView.swift */,
+				A95146702A38CE140090A539 /* SideMenuHeader.swift */,
+				A95146722A38CE300090A539 /* SideMenuViewModel.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		A97F35362A0C238900A16CFF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A95146742A38D0DC0090A539 /* HexToColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +231,7 @@
 				458F69DA2A0EB5A500041A76 /* FirebaseDatabaseSwift */,
 				458F69DC2A0EB5A500041A76 /* FirebaseFirestore */,
 				458F69DE2A0EB5A500041A76 /* FirebaseFirestoreSwift */,
+				A95146692A36BC870090A539 /* HorizonCalendar */,
 			);
 			productName = tap;
 			productReference = 457D73E42A09EEA800B13F55 /* tap.app */;
@@ -237,6 +263,7 @@
 			mainGroup = 457D73DB2A09EEA800B13F55;
 			packageReferences = (
 				45CCD9BA2A0AD534009249D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A95146682A36BC870090A539 /* XCRemoteSwiftPackageReference "HorizonCalendar" */,
 			);
 			productRefGroup = 457D73E52A09EEA800B13F55 /* Products */;
 			projectDirPath = "";
@@ -268,9 +295,14 @@
 				458512EF2A0B218E0012794C /* SignUpView.swift in Sources */,
 				458512F12A0B22190012794C /* AuthView.swift in Sources */,
 				458512ED2A0B1DB00012794C /* LoginView.swift in Sources */,
+				A951466D2A38CDCF0090A539 /* SideMenuView.swift in Sources */,
 				4532D4D22A0B2AAC00FC894A /* InventoryView.swift in Sources */,
 				4532D4CB2A0B2A2E00FC894A /* HomeView.swift in Sources */,
+				A95146752A38D0DC0090A539 /* HexToColor.swift in Sources */,
 				457D73EA2A09EEA800B13F55 /* ContentView.swift in Sources */,
+				A95146712A38CE140090A539 /* SideMenuHeader.swift in Sources */,
+				A95146732A38CE300090A539 /* SideMenuViewModel.swift in Sources */,
+				A951466F2A38CDE40090A539 /* SideMenuOptionView.swift in Sources */,
 				A97F35352A0BEAD100A16CFF /* TestCreateTabBar.swift in Sources */,
 				4532D4D02A0B2A9C00FC894A /* ScheduleView.swift in Sources */,
 				A97F353B2A0C3EC400A16CFF /* ForgotPassView.swift in Sources */,
@@ -497,6 +529,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		A95146682A36BC870090A539 /* XCRemoteSwiftPackageReference "HorizonCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/HorizonCalendar.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -534,6 +574,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 45CCD9BA2A0AD534009249D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		A95146692A36BC870090A539 /* HorizonCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A95146682A36BC870090A539 /* XCRemoteSwiftPackageReference "HorizonCalendar" */;
+			productName = HorizonCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
