@@ -14,45 +14,28 @@ struct ContentView: View {
     @State var schedule_showing = false
     @State var inventory_showing = false
     @State var profile_showing = false
-//    @Binding var page: AnyView
+    
     var body: some View {
         if userID == "" {
             AuthView()
             
         } else {
-//            TabView{
-//                HomeView()
-//                    .tabItem{
-//                        Label("Home", systemImage: "house")
-//                    }
-//                ScheduleView()
-//                    .tabItem{
-//                        Label("Schedule", systemImage: "calendar")
-//                    }
-//                InventoryView()
-//                    .tabItem{
-//                        Label("Inventory", systemImage: "pencil")
-//                    }
-//                ProfileView()
-//                    .tabItem{
-//                        Label("Profile", systemImage: "person.crop.circle")
-//                    }
-//            }
             NavigationView {
                 ZStack {
                     if sideMenu_showing {
+//                        withAnimation(.spring()) {
                         SideMenuView(sideMenu_showing: $sideMenu_showing, home_showing: $home_showing, schedule_showing: $schedule_showing, inventory_showing: $inventory_showing, profile_showing: $profile_showing)
+//                        }
                     }
                     if home_showing {
                         HomeView()
-                            .cornerRadius(sideMenu_showing ? 20 : 10)
-                            .offset(x: sideMenu_showing ? 200 : 0, y: sideMenu_showing ? 44 : 0)
-                            .scaleEffect(sideMenu_showing ? 0.8 : 1)
+                            .cornerRadius(20)
+                            .offset(x: sideMenu_showing ? 200 : 0)
+//                            .scaleEffect(sideMenu_showing ? 0.8 : 1)
                             .navigationBarItems(leading: Button(action: {
                                 withAnimation(.spring()) {
                                     sideMenu_showing.toggle()
                                 }
-    //                            print("DEBUG: Show menu here...")
                             }, label: {
                                 Image("hamburgerMenuIcon")
                                     .resizable()
@@ -64,13 +47,12 @@ struct ContentView: View {
                     else if schedule_showing {
                         ScheduleView()
                             .cornerRadius(sideMenu_showing ? 20 : 10)
-                            .offset(x: sideMenu_showing ? 200 : 0, y: sideMenu_showing ? 44 : 0)
-                            .scaleEffect(sideMenu_showing ? 0.8 : 1)
+                            .offset(x: sideMenu_showing ? 200 : 0)
+//                            .scaleEffect(sideMenu_showing ? 0.8 : 1)
                             .navigationBarItems(leading: Button(action: {
                                 withAnimation(.spring()) {
                                     sideMenu_showing.toggle()
                                 }
-    //                            print("DEBUG: Show menu here...")
                             }, label: {
                                 Image("hamburgerMenuIcon")
                                     .resizable()
@@ -82,13 +64,12 @@ struct ContentView: View {
                     else if inventory_showing {
                         InventoryView()
                             .cornerRadius(sideMenu_showing ? 20 : 10)
-                            .offset(x: sideMenu_showing ? 200 : 0, y: sideMenu_showing ? 44 : 0)
-                            .scaleEffect(sideMenu_showing ? 0.8 : 1)
+                            .offset(x: sideMenu_showing ? 200 : 0)
+//                            .scaleEffect(sideMenu_showing ? 0.8 : 1)
                             .navigationBarItems(leading: Button(action: {
                                 withAnimation(.spring()) {
                                     sideMenu_showing.toggle()
                                 }
-    //                            print("DEBUG: Show menu here...")
                             }, label: {
                                 Image("hamburgerMenuIcon")
                                     .resizable()
@@ -100,13 +81,12 @@ struct ContentView: View {
                     else if profile_showing {
                         ProfileView()
                             .cornerRadius(sideMenu_showing ? 20 : 10)
-                            .offset(x: sideMenu_showing ? 200 : 0, y: sideMenu_showing ? 44 : 0)
-                            .scaleEffect(sideMenu_showing ? 0.8 : 1)
+                            .offset(x: sideMenu_showing ? 200 : 0)
+//                            .scaleEffect(sideMenu_showing ? 0.8 : 1)
                             .navigationBarItems(leading: Button(action: {
                                 withAnimation(.spring()) {
                                     sideMenu_showing.toggle()
                                 }
-    //                            print("DEBUG: Show menu here...")
                             }, label: {
                                 Image("hamburgerMenuIcon")
                                     .resizable()
@@ -121,8 +101,18 @@ struct ContentView: View {
                             .foregroundColor(.white)
                     }
                 }
-                
             }
+            .gesture(DragGesture(minimumDistance: 3.0, coordinateSpace: .local)
+                .onEnded { value in
+                    print(value.translation)
+                    switch(value.translation.width) {
+                    case (...0): withAnimation(.spring()) {sideMenu_showing = false}
+                    case (0...):  withAnimation(.spring()) {sideMenu_showing = true}
+                    default:  print("not used")
+                    }
+                }
+            )
+            
         }
 
     }
@@ -131,18 +121,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-struct MainView: View {
-    var body: some View {
-//      LinearGradient(colors: [.indigo, .purple],
-//                     startPoint: .topLeading,
-//                     endPoint: .bottomTrailing)
-//                     .ignoresSafeArea()
-        Color.white
-            
-//                                .navigationTitle("Home")
-//                                .navigationBarTitleDisplayMode(.inline)
     }
 }

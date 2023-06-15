@@ -51,7 +51,8 @@ struct SideMenuView: View {
                             profile_showing = true
                         }
                         else {
-                            
+                            //SHOULD NEVER GET HERE
+                            print("DEBUG: ERROR IN SIDEVIEWMODEL")
                         }
                         withAnimation(.spring()) {
                             sideMenu_showing.toggle()
